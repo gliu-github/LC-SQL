@@ -1,0 +1,17 @@
+USE LeetCode;
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer (id INT,
+                       name VARCHAR(255),
+                       referee_id INT);
+INSERT INTO customer (id, name, referee_id) VALUES (1, 'Will', NULL),
+                                                   (2, 'Jane', NULL),
+                                                   (3, 'Alex', 2),
+                                                   (4, 'Bill', NULL),
+                                                   (5, 'Zack', 1),
+                                                   (6, 'Mark', 2);
+
+-- MY CODE
+
+SELECT name
+    FROM customer
+  WHERE referee_id != 2 OR referee_id IS NULL;
